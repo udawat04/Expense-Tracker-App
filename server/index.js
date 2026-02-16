@@ -30,6 +30,10 @@ app.use('/api/categories', categoriesRoutes)
 app.use('/api/transactions', transactionsRoutes)
 app.use('/api/seed', seedRoutes)
 app.use('/api/budgets', budgetsRoutes)
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`))
